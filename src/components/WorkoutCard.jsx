@@ -19,7 +19,6 @@ export default function WorkoutCard({ workout })
           className="object-cover"
         />
       </div>
-
       <div className="flex flex-1 flex-col p-6">
         <ul className="flex flex-wrap gap-2">
           {workout.muscleGroups.map((group) => (
@@ -31,12 +30,10 @@ export default function WorkoutCard({ workout })
             </li>
           ))}
         </ul>
-
         <h3 className="mt-3 font-display text-lg font-bold uppercase leading-7 tracking-[0.025em]">
           {workout.name}
         </h3>
         <p className="mt-1 text-xs text-muted">{workout.equipment}</p>
-
         <div className="mt-auto pt-4">
           <div className="border-t border-[#20242e] pt-3.5">
             <WorkoutStats workout={workout} />

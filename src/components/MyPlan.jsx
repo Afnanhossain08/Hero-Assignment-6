@@ -1,5 +1,4 @@
 "use client";
-
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
@@ -9,25 +8,26 @@ import PlanItem from "@/components/PlanItem";
 import Spinner from "@/components/Spinner";
 import ErrorState from "@/components/ErrorState";
 
-const TABS = [
+const TABS = 
+[
   { key: "plan", label: "Today's Plan" },
   { key: "saved", label: "Saved" },
 ];
 
-const SORTERS = {
+const SORTERS = 
+{
   duration: (a, b) => a.duration - b.duration,
   calories: (a, b) => b.caloriesBurned - a.caloriesBurned,
   rating: (a, b) => b.rating - a.rating,
 };
 
-export default function MyPlan() {
+export default function MyPlan() 
+{
   const { plan, saved, markDone, removeFromPlan, removeFromSaved } = usePlan();
   const { workouts, loading, error, reload } = useWorkouts();
   const [tab, setTab] = useState("plan");
   const [sortBy, setSortBy] = useState("duration");
-
   const byId = useMemo(() => new Map(workouts.map((w) => [w.id, w])), [workouts]);
-
   const planItems = useMemo(
     () => plan.map((p) => ({ workout: byId.get(p.id), done: p.done })).filter((i) => i.workout),
     [plan, byId]
@@ -45,15 +45,14 @@ export default function MyPlan() {
     }),
     [planItems]
   );
-
   const items = useMemo(() => {
     const source = tab === "plan" ? planItems : savedItems;
     return [...source].sort((a, b) => SORTERS[sortBy](a.workout, b.workout));
   }, [tab, planItems, savedItems, sortBy]);
 
   const isLoading = loading;
-
-  const stats = [
+  const stats = 
+  [
     { label: "Exercises", value: metrics.exercises, accent: true },
     { label: "Minutes", value: metrics.minutes },
     { label: "Calories", value: metrics.calories },
@@ -77,7 +76,7 @@ export default function MyPlan() {
             <p
               className={`font-display text-3xl font-bold leading-10 sm:text-4xl ${accent ? "text-accent" : "text-white"}`}
             >
-              {isLoading ? 0 : value}
+              {isLoading?0:value}
             </p>
           </div>
         ))}
@@ -86,8 +85,9 @@ export default function MyPlan() {
       {}
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
         <div role="tablist" aria-label="Plan views" className="flex gap-1 rounded-xl border border-[#232732] bg-[#151921] p-1">
-          {TABS.map(({ key, label }) => {
-            const active = tab === key;
+          {TABS.map(({ key, label }) => 
+          {
+            const active=tab===key;
             return (
               <button
                 key={key}
@@ -138,7 +138,8 @@ export default function MyPlan() {
           ) : (
             <Spinner label="Loading workouts…" />
           )
-        ) : items.length === 0 ? (
+        ) : items.length===0? 
+        (
           <EmptyState />
         ) : (
           items.map(({ workout, done }, index) => (
@@ -155,7 +156,6 @@ export default function MyPlan() {
     </div>
   );
 }
-
 function EmptyState() 
 {
   return (

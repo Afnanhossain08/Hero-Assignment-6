@@ -13,5 +13,5 @@ export async function getWorkout(id)
   if (!res.ok) throw new Error(`Could not load workout (${res.status})`);
   const data = await res.json();
   const item = Array.isArray(data) ? data.find((w) => String(w.id) === String(id)) : data?.data ?? data;
-  return item && typeof item === "object" && item.name ? item : null;
+  return item&&typeof item==="object" && item.name ? item : null;
 }

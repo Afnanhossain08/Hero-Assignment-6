@@ -9,7 +9,6 @@ export function PlanProvider({ children })
 {
   const [plan, setPlan] = useState([]); 
   const [saved, setSaved] = useState([]);
-
   const addToPlan = useCallback((workout) => {
     setPlan((prev) => [...prev, { id: workout.id, done: false }]);
     toast.success("Added to today's plan");

@@ -37,7 +37,6 @@ export default function PlanItem({ workout, done = false, onDone, onRemove })
         >
           View Details
         </Link>
-
         {onDone &&
           (done ? (
             <span
@@ -56,7 +55,6 @@ export default function PlanItem({ workout, done = false, onDone, onRemove })
               Mark as Done
             </button>
           ))}
-
         <button
           onClick={onRemove}
           aria-label={`Remove ${workout.name}`}

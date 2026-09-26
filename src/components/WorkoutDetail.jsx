@@ -1,5 +1,4 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { Bookmark, PlusCircle } from "lucide-react";
@@ -15,7 +14,6 @@ export default function WorkoutDetail({ id })
   const [status, setStatus] = useState("loading"); 
   const [error, setError] = useState(null);
   const { addToPlan, saveForLater } = usePlan();
-
   const load = useCallback(async () => {
     setStatus("loading");
     try 
@@ -36,6 +34,7 @@ export default function WorkoutDetail({ id })
     load();
   }, [load]);
 
+  
   if (status==="loading") return <Spinner label="Loading workout…" />;
   if (status==="missing") return <NotFoundView />;
   if (status==="error") return <ErrorState message={error} onRetry={load} />;

@@ -1,5 +1,4 @@
 "use client";
-
 import WorkoutCard from "@/components/WorkoutCard";
 import Spinner from "@/components/Spinner";
 import ErrorState from "@/components/ErrorState";

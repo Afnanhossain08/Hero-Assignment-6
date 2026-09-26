@@ -1,9 +1,7 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import { getWorkouts } from "@/lib/api";
 let cache = null;
-
 export function useWorkouts() 
 {
   const [workouts, setWorkouts] = useState(cache ?? []);

@@ -1,25 +1,22 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/Logo";
 import { usePlan } from "@/context/PlanContext";
 
-const links = [
+const links = 
+[
   { href: "/", label: "Workouts" },
   { href: "/my-plan", label: "My Plan" },
 ];
-
 export default function Navbar() 
 {
   const pathname = usePathname();
   const { plan, saved } = usePlan();
-
   return (
     <header className="border-b border-[#1c1f26] bg-ink-deep">
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-y-3 px-4 py-3 sm:px-6 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:py-0">
         <Logo />
-
         <nav aria-label="Primary" className="order-last flex w-full justify-center md:order-none md:w-auto">
           {links.map(({href,label}) => {
             const active=pathname===href;

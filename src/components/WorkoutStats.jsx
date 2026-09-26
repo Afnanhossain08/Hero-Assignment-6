@@ -2,7 +2,8 @@ import { Clock, Flame, Star } from "lucide-react";
 
 export default function WorkoutStats({ workout, className = "text-muted", iconClass = "text-muted" }) 
 {
-  const items = [
+  const items = 
+  [
     { Icon: Clock, text: `${workout.duration} min` },
     { Icon: Flame, text: `${workout.caloriesBurned} kcal` },
     { Icon: Star, text: `${workout.rating}` },
