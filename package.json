@@ -22,6 +22,6 @@
     "@tailwindcss/postcss": "^4.3.3",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3"
-  
+  },
   "description": "FitLog \u2014 a dark, no-nonsense gym companion built with Next.js and Tailwind CSS."
 }
