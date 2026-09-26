@@ -1,4 +1,4 @@
-FitLog Workout Library & Planner
+## FitLog Workout Library & Planner
 
 Discover your next workout, build today's plan, and track your progress in one place.
 
