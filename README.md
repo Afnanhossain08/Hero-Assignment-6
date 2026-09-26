@@ -7,12 +7,12 @@ FitLog is a responsive fitness web application. Its dark interface and lime-gree
 
 ## Technologies Used
 
-1. **Next.js** (App Router) | Routing, layouts, dynamic `/workouts/[id]` route, custom 404 |
-2. **React** | UI, hooks and Context for shared plan state |
-3. **Tailwind CSS v4** | Styling and responsive layout |
-4. **lucide-react** | Icons |
-5. **react-hot-toast** | Toast notifications |
-6. **Fontsource** (Oswald + Inter) | Self-hosted display and body fonts |
+1. **Next.js** 
+2. **React** 
+3. **Tailwind CSS v4** 
+4. **lucide-react** 
+5. **react-hot-toast** 
+6. **Fontsource** 
 
 ## Key Features
 
